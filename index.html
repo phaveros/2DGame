@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+    <script src="https://pixijs.download/release/pixi.min.js"></script>
+</head>
+
+<body>
+    <script>
+        // Create the application helper and add its render target to the page
+        let app = new PIXI.Application({
+            width: 1280,
+            height: 500,
+
+        });
+        document.body.appendChild(app.view);
+        // Create the sprite and add it to the stage
+        let background = PIXI.Sprite.from('trees.png');
+        app.stage.addChild(background);
+        background.scale.set(0.5, 0.5)
+        let sprite = PIXI.Sprite.from('sample.png');
+        app.stage.addChild(sprite);
+
+
+
+        // Add a ticker callback to move the sprite back and forth
+        let elapsed = 0.0;
+        app.ticker.add((gameloop) => {
+            elapsed += gameloop;
+            //sprite.x= 
+        });
+        window.addEventListener("keydown", keysDown)
+
+        function keysDown(e) {
+            if (e.keyCode == 87) {
+                sprite.y -= 20
+            } else if (e.keyCode == 83) {
+                sprite.y += 20
+            }
+        }
+    </script>
+</body>
+
+</html>
